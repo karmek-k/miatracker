@@ -4,6 +4,35 @@
     <form method="POST" action="{{ route('expenses.save') }}">
         @csrf
 
+        @if($errors->any())
+            <p class="text-red-600">W formularzu są błędy!</p>
+        @endif
+
+        <p>
+            <label>
+                Nazwa wydatku
+                <input
+                    class="rounded bg-gray-50 p-2 border-2 border-blue-600"
+                    type="text"
+                    name="name"
+                    placeholder="Nowe buty"
+                    required
+                />
+            </label>
+        </p>
+
+        <p>
+            <label>
+                Data
+                <input
+                    class="rounded bg-gray-50 p-2 border-2 border-blue-600"
+                    type="date"
+                    name="date"
+                    required
+                />
+            </label>
+        </p>
+
         <p>
             <label>
                 Złote
@@ -24,7 +53,8 @@
                     class="rounded bg-gray-50 p-2 border-2 border-blue-600"
                     type="number"
                     name="grosze"
-                    placeholder="00"
+                    placeholder="0"
+                    value="0"
                     maxlength="2"
                 />
             </label>
