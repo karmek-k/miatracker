@@ -10,7 +10,9 @@
 <body>
     <main class="max-w-2xl mx-auto my-4">
         <header>
-            <h1 class="text-4xl flex justify-center">Miatracker</h1>
+            <a href="{{ route('index') }}">
+                <h1 class="text-4xl flex justify-center">Miatracker</h1>
+            </a>
         </header>
         {{ $slot }}
     </main>

@@ -4,8 +4,8 @@
         <strong>{{ $expenses }}</strong>
     </p>
     <a href="{{ route('expenses.new') }}">
-        <button class="p-4 text-xl bg-blue-400 text-white rounded">
+        <x-btn>
             Dodaj nowy wydatek
-        </button>
+        </x-btn>
     </a>
 </x-layout>
