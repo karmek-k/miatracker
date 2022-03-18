@@ -5,10 +5,12 @@ use App\Models\Expense;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $expenseCosts = Expense::all(['money'])->sum('money') / 100.0;
+    $expenses = Expense::all();
+    $expensesCost = $expenses->sum('money') / 100.0;
 
     return view('expenses.index', [
-        'expenses' => $expenseCosts,
+        'expenses' => $expenses,
+        'expensesCost' => $expensesCost,
     ]);
 })->name('index');
 

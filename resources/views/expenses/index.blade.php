@@ -1,7 +1,7 @@
 <x-layout>
     <p class="flex flex-col">
-        Wydatki w tym tygodniu:
-        <strong>{{ $expenses }} zł</strong>
+        Wydatki ({{ count($expenses) }}):
+        <strong>{{ $expensesCost }} zł</strong>
     </p>
     <a href="{{ route('expenses.new') }}">
         <x-btn>
