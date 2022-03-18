@@ -10,6 +10,11 @@ class Expense extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'date',
+    ];
+
     public static function convertMoney(int $zlote, int $grosze = 0): int
     {
         if ($zlote < 0 || $grosze < 0) {
