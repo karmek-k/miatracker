@@ -28,6 +28,7 @@
                     class="rounded bg-gray-50 p-2 border-2 border-blue-600"
                     type="date"
                     name="date"
+                    value="{{ $today }}"
                     required
                 />
             </label>

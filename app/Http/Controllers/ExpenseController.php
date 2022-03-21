@@ -19,7 +19,9 @@ class ExpenseController extends Controller
 
     public function newExpense(): View
     {
-        return view('expenses.new');
+        return view('expenses.new', [
+            'today' => date('Y-m-d'),
+        ]);
     }
 
     public function saveExpense(NewExpenseRequest $req) {
