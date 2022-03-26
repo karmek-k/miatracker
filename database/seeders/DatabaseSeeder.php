@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::factory(1)->create();
-        // Expense::factory(20)->create();
+        foreach (User::factory(1)->create() as $user) {
+            $user->expenses = Expense::factory(20)->create();
+        }
     }
 }
