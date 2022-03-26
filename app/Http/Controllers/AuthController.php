@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserLoginRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -24,5 +25,15 @@ class AuthController extends Controller
         }
 
         return back()->withErrors('Nieprawidłowe dane logowania');
+    }
+
+    public function logout(Request $req)
+    {
+        Auth::logout();
+
+        $req->session()->invalidate();
+        $req->session()->regenerateToken();
+
+        return redirect()->route('index');
     }
 }
