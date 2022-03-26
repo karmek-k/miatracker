@@ -2,13 +2,17 @@
     <form action="{{ route('auth.validate') }}" method="POST">
         @csrf
 
+        @if ($errors->any())
+            <p class="text-red-600">{{ $errors->first() }}</p>
+        @endif
+
         <p>
             <label>
                 Login
                 <input
                     class="rounded bg-gray-50 p-2 border-2 border-blue-600"
                     type="text"
-                    name="login"
+                    name="username"
                     required
                 />
             </label>
