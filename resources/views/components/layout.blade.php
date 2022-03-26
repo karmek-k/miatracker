@@ -13,6 +13,12 @@
             <a href="{{ route('index') }}">
                 <h1 class="text-4xl flex justify-center">Miatracker</h1>
             </a>
+
+            @auth
+                <x-btn>
+                    <a href="{{ route('auth.logout') }}">Wyloguj się</a>
+                </x-btn>
+            @endauth
         </header>
         {{ $slot }}
     </main>
